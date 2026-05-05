@@ -12,14 +12,14 @@
       "import": "./dist/order-dialog.js",
       "require": "./dist/order-dialog.umd.cjs"
     },
-    "./styles.css": "./dist/styles.css"
+    "./styles.css": "./dist/order-dialog.css"
   },
   "files": [
     "dist"
   ],
   "scripts": {
     "dev": "vite",
-    "build": "vite build && cp dist/order-dialog.css dist/styles.css && tsc -p tsconfig.build.json",
+    "build": "vite build && tsc -p tsconfig.build.json",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit"
   },
