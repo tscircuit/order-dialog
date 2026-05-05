@@ -1,6 +1,6 @@
 {
   "name": "@tscircuit/order-dialog",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "private": false,
   "type": "module",
   "main": "./dist/order-dialog.umd.cjs",
