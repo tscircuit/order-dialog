@@ -1,4 +1,4 @@
-:root {
+.od-page-backdrop {
   --od-bg-page: #f6f6f7;
   --od-bg-card: #ffffff;
   --od-bg-subtle: #fafafa;
@@ -28,22 +28,11 @@
   --od-font-mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
 }
 
-* {
+.od-page-backdrop,
+.od-page-backdrop *,
+.od-page-backdrop *::before,
+.od-page-backdrop *::after {
   box-sizing: border-box;
-}
-
-html,
-body,
-#root {
-  min-height: 100%;
-}
-
-body {
-  margin: 0;
-  font-family: var(--od-font-sans);
-  color: var(--od-text-1);
-  background: var(--od-bg-page);
-  -webkit-font-smoothing: antialiased;
 }
 
 .od-page-backdrop {
@@ -54,6 +43,9 @@ body {
     radial-gradient(circle at 80% 90%, #f0f0f5 0%, transparent 50%),
     var(--od-bg-page);
   display: flex;
+  font-family: var(--od-font-sans);
+  color: var(--od-text-1);
+  -webkit-font-smoothing: antialiased;
   align-items: center;
   justify-content: center;
   overflow: auto;
@@ -510,12 +502,12 @@ body {
   flex-shrink: 0;
 }
 
-[data-tip] {
+.od-page-backdrop [data-tip] {
   position: relative;
 }
 
-[data-tip]:hover::after,
-[data-tip]:focus::after {
+.od-page-backdrop [data-tip]:hover::after,
+.od-page-backdrop [data-tip]:focus::after {
   content: attr(data-tip);
   position: absolute;
   bottom: calc(100% + 8px);
@@ -538,7 +530,7 @@ body {
   pointer-events: none;
 }
 
-[data-tip]:hover::before {
+.od-page-backdrop [data-tip]:hover::before {
   content: "";
   position: absolute;
   bottom: 100%;
