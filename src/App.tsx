@@ -7,7 +7,8 @@ const appOrigin = window.location.origin;
 
 const fakeStripeCheckout = {
 	endpoint: `${fakeStripeUrl}/v1/checkout/sessions`,
-	successUrl: `${appOrigin}/orders/success?session_id={CHECKOUT_SESSION_ID}`,
+	// ${appOrigin}/orders/success?session_id={CHECKOUT_SESSION_ID}
+	successUrl: `${appOrigin}/`,
 	cancelUrl: `${appOrigin}/orders/cancel`,
 };
 
