@@ -1,9 +1,12 @@
 export { OrderDialog } from "./OrderDialog"
 export type {
   AutofixIssue,
+  BoardImage,
+  BoardSpecification,
   Fabricator,
   OrderDialogProps,
   OrderQuantity,
+  ProjectDetails,
   SavedAddress,
-} from "./OrderDialog"
+} from "./types"
 import "./styles.css"

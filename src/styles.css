@@ -144,6 +144,13 @@
   filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.08));
 }
 
+.od-board-image {
+  max-width: 82%;
+  max-height: 78%;
+  object-fit: contain;
+  filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.08));
+}
+
 .od-pcb-3d-wrap {
   width: 78%;
   height: 78%;
