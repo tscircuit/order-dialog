@@ -1,10 +1,14 @@
 import { OrderDialog } from "./OrderDialog";
 
+const fakeStripeUrl =
+	import.meta.env.VITE_FAKE_STRIPE_URL ?? "http://127.0.0.1:4242";
+
+const appOrigin = window.location.origin;
+
 const fakeStripeCheckout = {
-	endpoint: "http://127.0.0.1:4242/v1/checkout/sessions",
-	successUrl:
-		"http://localhost:3000/orders/success?session_id={CHECKOUT_SESSION_ID}",
-	cancelUrl: "http://localhost:3000/orders/cancel",
+	endpoint: `${fakeStripeUrl}/v1/checkout/sessions`,
+	successUrl: `${appOrigin}/orders/success?session_id={CHECKOUT_SESSION_ID}`,
+	cancelUrl: `${appOrigin}/orders/cancel`,
 };
 
 export function App() {
