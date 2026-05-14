@@ -1,39 +1,43 @@
 {
-  "name": "@tscircuit/order-dialog",
-  "version": "0.0.1",
-  "private": false,
-  "type": "module",
-  "main": "./src/index.ts",
-  "module": "./src/index.ts",
-  "types": "./src/index.ts",
-  "exports": {
-    ".": {
-      "types": "./src/index.ts",
-      "import": "./src/index.ts"
-    },
-    "./styles.css": "./src/styles.css"
-  },
-  "files": [
-    "src"
-  ],
-  "scripts": {
-    "dev": "vite",
-    "build:preview": "vite build --config vite.preview.config.ts",
-    "preview": "vite preview",
-    "typecheck": "tsc --noEmit"
-  },
-  "peerDependencies": {
-    "react": "^18.3.0 || ^19.0.0",
-    "react-dom": "^18.3.0 || ^19.0.0"
-  },
-  "devDependencies": {
-    "@types/node": "^25.6.0",
-    "@types/react": "^19.2.14",
-    "@types/react-dom": "^19.2.3",
-    "@vitejs/plugin-react": "^4.4.1",
-    "react": "^19.1.0",
-    "react-dom": "^19.1.0",
-    "typescript": "^5.8.3",
-    "vite": "^6.3.5"
-  }
+	"name": "@tscircuit/order-dialog",
+	"version": "0.0.1",
+	"private": false,
+	"type": "module",
+	"main": "./src/index.ts",
+	"module": "./src/index.ts",
+	"types": "./src/index.ts",
+	"exports": {
+		".": {
+			"types": "./src/index.ts",
+			"import": "./src/index.ts"
+		},
+		"./styles.css": "./src/styles.css"
+	},
+	"files": [
+		"src"
+	],
+	"scripts": {
+		"dev": "vite",
+		"fake-stripe": "bun run scripts/fake-stripe.ts",
+		"build:preview": "vite build --config vite.preview.config.ts",
+		"preview": "vite preview",
+		"typecheck": "tsc --noEmit",
+		"format": "biome format --write ."
+	},
+	"peerDependencies": {
+		"react": "^18.3.0 || ^19.0.0",
+		"react-dom": "^18.3.0 || ^19.0.0"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^2.4.15",
+		"@tscircuit/fake-stripe": "git+https://github.com/tscircuit/fake-stripe.git#1fbfc5dcb05b80fafb0ee160749c284803e1a560",
+		"@types/node": "^25.6.0",
+		"@types/react": "^19.2.14",
+		"@types/react-dom": "^19.2.3",
+		"@vitejs/plugin-react": "^4.4.1",
+		"react": "^19.1.0",
+		"react-dom": "^19.1.0",
+		"typescript": "^5.8.3",
+		"vite": "^6.3.5"
+	}
 }

@@ -1,4 +1,4 @@
 {
-  "buildCommand": "bun run build:preview",
-  "outputDirectory": "dist"
+	"buildCommand": "bun run build:preview",
+	"outputDirectory": "dist"
 }
