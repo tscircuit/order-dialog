@@ -20,7 +20,7 @@
 		"dev": "vite",
 		"fake-stripe": "bun run scripts/fake-stripe.ts",
 		"build:preview": "vite build --config vite.preview.config.ts",
-		"preview": "vite preview",
+		"preview": "vite preview --config vite.preview.config.ts",
 		"typecheck": "tsc --noEmit",
 		"format": "biome format --write ."
 	},

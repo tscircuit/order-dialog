@@ -1,8 +1,11 @@
 import { StripeServer } from "@tscircuit/fake-stripe";
 
+const port = Number(process.env.FAKE_STRIPE_PORT ?? 4242);
+const hostname = process.env.FAKE_STRIPE_HOSTNAME ?? "127.0.0.1";
+
 const stripe = new StripeServer({
-	hostname: "127.0.0.1",
-	port: 4242,
+	hostname,
+	port,
 });
 
 const routeRequest = stripe.handleRequest;
