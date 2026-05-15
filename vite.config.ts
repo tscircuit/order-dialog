@@ -4,6 +4,8 @@ import fakeStripeBundle from "@tscircuit/fake-stripe/dist/bundle.js";
 import { defineConfig, type Plugin } from "vite";
 import { getNodeHandler } from "winterspec/adapters/node";
 
+const isPreviewBuild = process.env.BUILD_PREVIEW === "1";
+
 export function fakeStripePlugin(): Plugin {
 	return {
 		name: "order-dialog-fake-stripe",
@@ -37,26 +39,28 @@ function isFakeStripeRoute(url: string | undefined) {
 
 export default defineConfig({
 	plugins: [react(), fakeStripePlugin()],
-	build: {
-		lib: {
-			entry: resolve(__dirname, "src/index.ts"),
-			name: "TscircuitOrderDialog",
-			fileName: "order-dialog",
-			cssFileName: "styles",
-		},
-		rollupOptions: {
-			external: ["react", "react-dom", "react/jsx-runtime"],
-			output: {
-				assetFileNames: (assetInfo) => {
-					if (assetInfo.name?.endsWith(".css")) return "styles.css";
-					return "[name][extname]";
+	build: isPreviewBuild
+		? undefined
+		: {
+				lib: {
+					entry: resolve(__dirname, "src/index.ts"),
+					name: "TscircuitOrderDialog",
+					fileName: "order-dialog",
+					cssFileName: "styles",
 				},
-				globals: {
-					react: "React",
-					"react-dom": "ReactDOM",
-					"react/jsx-runtime": "jsxRuntime",
+				rollupOptions: {
+					external: ["react", "react-dom", "react/jsx-runtime"],
+					output: {
+						assetFileNames: (assetInfo) => {
+							if (assetInfo.name?.endsWith(".css")) return "styles.css";
+							return "[name][extname]";
+						},
+						globals: {
+							react: "React",
+							"react-dom": "ReactDOM",
+							"react/jsx-runtime": "jsxRuntime",
+						},
+					},
 				},
 			},
-		},
-	},
 });
