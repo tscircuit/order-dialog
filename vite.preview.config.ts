@@ -1,6 +1,6 @@
 import react from "@vitejs/plugin-react";
 import { defineConfig } from "vite";
-import { fakeStripePlugin } from "./vite.fake-stripe";
+import { fakeStripePlugin } from "./vite.config";
 
 export default defineConfig({
 	plugins: [react(), fakeStripePlugin()],
