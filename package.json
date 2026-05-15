@@ -18,9 +18,8 @@
 	],
 	"scripts": {
 		"dev": "vite",
-		"fake-stripe": "bun run scripts/fake-stripe.ts",
-		"build:preview": "vite build --config vite.preview.config.ts",
-		"preview": "vite preview --config vite.preview.config.ts",
+		"build:preview": "BUILD_PREVIEW=1 vite build",
+		"preview": "BUILD_PREVIEW=1 vite preview",
 		"typecheck": "tsc --noEmit",
 		"format": "biome format --write ."
 	},
