@@ -1,14 +1,8 @@
 import { resolve } from "node:path";
 import react from "@vitejs/plugin-react";
 import fakeStripeBundle from "@tscircuit/fake-stripe/dist/bundle.js";
-import { defineConfig, type Plugin, type PluginOption } from "vite";
+import { defineConfig, type Plugin } from "vite";
 import { getNodeHandler } from "winterspec/adapters/node";
-
-const plugins: PluginOption[] = [react()];
-
-if (!process.env.VERCEL) {
-	plugins.push(fakeStripePlugin());
-}
 
 export function fakeStripePlugin(): Plugin {
 	return {
@@ -42,7 +36,7 @@ function isFakeStripeRoute(url: string | undefined) {
 }
 
 export default defineConfig({
-	plugins,
+	plugins: [react(), fakeStripePlugin()],
 	build: {
 		lib: {
 			entry: resolve(__dirname, "src/index.ts"),
