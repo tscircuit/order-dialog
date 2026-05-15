@@ -41,10 +41,9 @@
 .od-page-backdrop {
 	position: fixed;
 	inset: 0;
-	background:
-		radial-gradient(circle at 20% 10%, #ffffff 0%, transparent 40%),
-		radial-gradient(circle at 80% 90%, #f0f0f5 0%, transparent 50%),
-		var(--od-bg-page);
+	z-index: 2147483647;
+	isolation: isolate;
+	background: transparent;
 	display: flex;
 	font-family: var(--od-font-sans);
 	color: var(--od-text-1);
@@ -59,11 +58,6 @@
 	content: "";
 	position: absolute;
 	inset: 0;
-	background-image:
-		linear-gradient(var(--od-border) 1px, transparent 1px),
-		linear-gradient(90deg, var(--od-border) 1px, transparent 1px);
-	background-size: 32px 32px;
-	opacity: 0.35;
 	pointer-events: none;
 }
 
@@ -72,12 +66,12 @@
 	inset: 0;
 	background: rgba(15, 15, 20, 0.45);
 	backdrop-filter: blur(4px);
-	z-index: 1;
+	z-index: 0;
 }
 
 .od-dialog {
 	position: relative;
-	z-index: 2;
+	z-index: 1;
 	width: 920px;
 	max-width: 100%;
 	background: var(--od-bg-card);
