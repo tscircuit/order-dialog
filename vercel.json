@@ -1,4 +1,18 @@
 {
 	"buildCommand": "bun run build:preview",
-	"outputDirectory": "dist"
+	"outputDirectory": "dist",
+	"rewrites": [
+		{
+			"source": "/v1/:path*",
+			"destination": "/api/v1/:path*"
+		},
+		{
+			"source": "/checkout/:path*",
+			"destination": "/api/checkout/:path*"
+		},
+		{
+			"source": "/health",
+			"destination": "/api/health"
+		}
+	]
 }
