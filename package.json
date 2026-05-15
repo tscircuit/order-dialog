@@ -28,9 +28,12 @@
 		"react": "^18.3.0 || ^19.0.0",
 		"react-dom": "^18.3.0 || ^19.0.0"
 	},
+	"trustedDependencies": [
+		"@tscircuit/fake-stripe"
+	],
 	"devDependencies": {
 		"@biomejs/biome": "^2.4.15",
-		"@tscircuit/fake-stripe": "git+https://github.com/tscircuit/fake-stripe.git#1fbfc5dcb05b80fafb0ee160749c284803e1a560",
+		"@tscircuit/fake-stripe": "git+https://github.com/tscircuit/fake-stripe.git#f1a5b40",
 		"@types/node": "^25.6.0",
 		"@types/react": "^19.2.14",
 		"@types/react-dom": "^19.2.3",
@@ -38,6 +41,7 @@
 		"react": "^19.1.0",
 		"react-dom": "^19.1.0",
 		"typescript": "^5.8.3",
-		"vite": "^6.3.5"
+		"vite": "^6.3.5",
+		"winterspec": "^0.0.114"
 	}
 }

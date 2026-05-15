@@ -16,10 +16,5 @@
 		"noEmit": true,
 		"jsx": "react-jsx"
 	},
-	"include": [
-		"src",
-		"vite.config.ts",
-		"vite.preview.config.ts",
-		"vite.fake-stripe.ts"
-	]
+	"include": ["src", "vite.config.ts", "vite.preview.config.ts"]
 }
